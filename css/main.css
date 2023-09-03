@@ -1,0 +1,252 @@
+:root {
+  --primary-color: #17aabd;
+}
+
+body {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+.container {
+  display: flex;
+  height: calc(100vh - 40px);
+  padding: 20px;
+}
+
+.right {
+  flex: 1;
+}
+.right .shadow {
+  position: absolute;
+  top: 0px;
+  width: 40vw;
+  height: 20vh;
+  display: flex;
+  right: 100px;
+}
+.right .shadow span {
+  transform: rotate(-45deg);
+  background: linear-gradient(to left, #efefef, transparent);
+  box-shadow: inset;
+  width: 500px;
+  height: 50px;
+  position: absolute;
+}
+.right .shadow:first-child {
+  top: 10px;
+  right: 30px;
+}
+.right .shadow span:nth-last-of-type(2) {
+  bottom: -40px;
+  right: 0px;
+}
+.right .top {
+  min-height: 60vh;
+  display: flex;
+  align-items: end;
+}
+.right .top img {
+  width: 250px;
+  position: relative;
+  z-index: 1;
+  transform: rotate(45deg);
+  border: 8px solid transparent;
+  outline: 20px solid #79db2c;
+
+  margin-right: -60px;
+}
+.right .top span {
+  width: 70px;
+  height: 70px;
+  border: 20px solid #17aabc;
+  z-index: 2;
+  position: absolute;
+  bottom: 50px;
+  right: -60px;
+  transform: rotate(45deg);
+}
+.right .bottom {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 0;
+  height: 0;
+  border-left: 40vw solid transparent;
+  border-bottom: 400px solid #0d1e30;
+}
+.right h3 {
+  width: 400px;
+  position: absolute;
+  bottom: -400px;
+  right: 60px;
+  color: #fff;
+}
+.right h3 span {
+  color: var(--primary-color);
+}
+.left {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0px 30px;
+}
+.left .header {
+  display: flex;
+  justify-content: space-between;
+}
+.left .header h1 {
+  color: var(--primary-color);
+  font-weight: 200;
+  font-size: 40px;
+  margin: 5px;
+}
+.left .logo {
+  width: 150px;
+}
+
+.left .content {
+  width: 50%;
+
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  margin-right: auto;
+  gap: 2rem;
+  padding: 0px 100px;
+}
+.left .content .type {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.left .content .type .title {
+  transition: 0.4s;
+}
+.left .content .type:hover {
+  transform: scale(1.2);
+}
+.left .content .type:hover .title {
+  color: var(--primary-color);
+}
+.left .content .img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--primary-color);
+  border-top-width: 4px;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  gap: 1rem;
+}
+
+.left .content .type svg {
+  font-size: 30px;
+  color: var(--primary-color);
+}
+
+.left .footer {
+  display: flex;
+
+  justify-content: flex-end;
+  gap: 2px;
+}
+
+.left .footer svg {
+  font-size: 30px;
+  color: var(--primary-color);
+  margin: 0px 20px;
+  cursor: pointer;
+}
+
+.left .footer svg {
+  transition: 0.4s;
+}
+.left .footer svg:hover {
+  transform: scale(1.2);
+}
+
+.fa-twitter {
+  color: #5eb11a !important;
+}
+
+
+@media (max-width:900px) {
+  .container{
+    flex-direction: column-reverse;
+    height: auto;
+    min-height: 100vh;
+    padding: 0px;
+  }
+  .left{
+    height: 100vh;
+  }
+  .left .content{
+    margin: auto;
+    width: 100%;
+    padding: 0px;
+    margin-bottom: 20px;
+    
+  }
+  .right .shadow{
+    display: none;
+  }
+  .right .top{
+    display: none;
+  }
+  .right .bottom{
+    margin-top: 70px;
+    position: relative;
+    width: auto;
+    border: none !important;
+    background-color: #0d1e30 !important;
+    height: 20px;
+    right: auto !important;
+    bottom: auto !important;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+  .right .bottom h3{
+    position: relative;
+    border: none !important;
+    bottom: auto !important;
+
+    right: auto !important;
+  }
+}
+
+@media (max-width:771px) {
+  .left .logo{
+width: 100px;
+  }
+  .left .header{
+    margin-bottom: 30px;
+
+  }
+  .left h1{
+    font-size: 25px !important;
+    margin: 30px 0px !important;
+  }
+   .left .content{
+     grid-template-columns: repeat(3, auto);
+
+    
+  }
+}
+
+@media (max-width:500px) {
+   .left .content{
+     grid-template-columns: repeat(2, auto);
+
+    
+  }
+}
